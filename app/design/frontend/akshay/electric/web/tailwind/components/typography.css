@@ -1,0 +1,18 @@
+@layer utilities {
+    .text-sans-serif {
+        font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    }
+}
+
+html {
+    @apply antialiased;
+}
+
+body {
+    @apply text-black text-sans-serif leading-normal text-base tracking-normal;
+}
+
+@font-face{
+    font-family: "Oswald";
+    src: url(".../fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+}
