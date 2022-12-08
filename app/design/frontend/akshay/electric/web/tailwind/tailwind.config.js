@@ -8,6 +8,7 @@ module.exports = hyvaModules.mergeTailwindConfig({
         extend: {
             fontFamily: {
                 Oswald: ['Oswald', 'sans-serif'],
+                FiraSans: ['FiraSans', 'sans-serif'],
             },
             screens: {
                 'sm': '640px',

@@ -47,6 +47,7 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
         }
     }
 </script>
+
 <div id="header"
      class="relative z-30 w-full border-b shadow bg-container-lighter border-container-lighter"
      x-data="initHeader()"
@@ -165,3 +166,15 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
     <?= $block->getChildHtml('authentication-popup'); ?>
 </div>
 
+<script type="text/javascript">
+     window.addEventListener("scroll", (event) => {
+        console.log(window.scrollY)
+        if(window.scrollY>100){
+            document.querySelector('#header').classList.add("fixed_header");
+            document.querySelector('#header').classList.remove("relative");
+        }else{
+            document.querySelector('#header').classList.remove("fixed_header");
+            document.querySelector('#header').classList.add("relative");
+        }
+});
+</script>

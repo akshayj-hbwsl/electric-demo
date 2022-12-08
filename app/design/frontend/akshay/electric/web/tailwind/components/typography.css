@@ -16,3 +16,8 @@ body {
     font-family: "Oswald";
     src: url(".../fonts/Oswald-VariableFont_wght.ttf") format("truetype");
 }
+
+@font-face{
+    font-family: "FiraSans";
+    src: url(".../fonts/FiraSans-Bold.ttf") format("truetype");
+}

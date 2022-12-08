@@ -75,7 +75,7 @@ $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/custom.log');
                     <?php if (!empty($menuItem['childData'])): ?> <!-- main category -->
 
                         
-                        <?php if ($menuItem['name']=='Products' ): ?>  <!-- living room if-->
+                        <?php if ($menuItem['name']=='Products' ): ?>  <!-- products if-->
                         
                         <div
                             class="absolute z-10 hidden px-6 py-4 -ml-6 shadow-lg bg-container-lighter bg-opacity-95 flex flex-row w-[850px]"
@@ -94,7 +94,8 @@ $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/custom.log');
                             
                             <img id="nav-images"
                             class="w-[255px] h-[137px] p-[5px] mb-[40px]"
-                            src="<?php echo $escaper->escapeUrl($subMenuItem['image']); ?>">    
+                            src="<?php echo $escaper->escapeUrl($subMenuItem['image']); ?>"
+                            >    
 
                                 <a href="<?= $escaper->escapeUrl($subMenuItem['url']) ?>"
                                    title="<?= $escaper->escapeHtmlAttr($subMenuItem['name']) ?>"
@@ -201,10 +202,10 @@ $writer = new \Zend_Log_Writer_Stream(BP . '/var/log/custom.log');
                             <div class="flex flex-row">
                             <img id="nav-images"
                             class="w-[190px] h-[150px] p-[5px]"
-                            src="<?php echo $this->getViewFileUrl('Magento_Theme::images/1.jpg'); ?>">
+                            src="<?php echo $this->getViewFileUrl('Magento_Theme::images/camera-category.jpg'); ?>">
                             <img id="nav-images"
                             class="w-[190px] h-[150px] p-[5px]"
-                            src="<?php echo $this->getViewFileUrl('Magento_Theme::images/1.jpg'); ?>">
+                            src="<?php echo $this->getViewFileUrl('Magento_Theme::images/camera-category.jpg'); ?>">
                             </div>
                            </div>
 

@@ -1441,6 +1441,42 @@ body {
     display: block;
     clear: both;
 }
+/* HEADER */
+#header{
+    background-color: rgba(172, 23, 23, 0);
+}
+.fixed_header{
+    transition: all .7s ease 0s;
+    position: fixed;
+    top: 0px;
+    background-color: rgba(0, 0, 0, 0.8);
+    -moz-animation-timing-function: ease-out;
+    -moz-animation-direction: normal;
+    -moz-animation-play-state: running;
+    -moz-animation-fill-mode: forwards;
+    box-shadow: 0 0px 5px 0;
+}
+/* HOME SLIDER */
+.home-slider-row{
+    margin-top: -152px;
+    margin-right: -225px;
+    margin-left: -225px;
+}
+.home-slider-row button[aria-label="Next"]{
+    position: absolute;
+    background: gray;
+    height: 63px;
+    width: 71px;
+    top: -172px;
+    border-radius: 0;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    left: 42vw;
+}
+.glider-slide{
+    width: 119vw;
+}
 .prod-image{
     width: 270px;
     height: 344px;
@@ -1455,7 +1491,7 @@ body {
 .btn-addtocart{
     padding: 6px;
     padding-right: 0px;
-    /* margin-right: unset; */
+    margin-right: unset;
     position: relative;
     left: 130px;
     transition: all .7s ease 0s;
@@ -1464,9 +1500,6 @@ body {
     color: white;
     margin-bottom: 3px;
     
-}
-.btn-addtocart svg{
-    /* margin-right: -8px; */
 }
 .btn-wishlist{
     position: relative;
@@ -1508,14 +1541,24 @@ body {
     justify-content: center;
 }
 .ripped-banner p {
-    padding-top: 81px;
+    /* padding-top: 81px; */
+    font-family: "FiraSans";
+    font-weight: 600;
+}
+@media (max-width:500px) {
+    #html-body .ripped-banner{
+        display: none;
+    }
+    .ripped-banner p {
+        display: none;
+    }
 }
 /* NEW ARRIVALS */
 .new-arrivals-heading{
     color: #201f1f;
     font-size: 33px;
     letter-spacing: 4px;
-    font-family: Oswald,sans-serif;
+    font-family: "FiraSans",sans-serif;
     padding: 0;
     position: relative;
     text-transform: uppercase;
@@ -1527,6 +1570,8 @@ body {
 .usp-row {
     display: flex;
     justify-content: space-between;
+    margin-top: 150px;
+    margin-bottom: 50px;
 }
 .usp-columns{
     text-align: center;
@@ -1540,6 +1585,20 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    width: -webkit-max-content;
+    width: -moz-max-content;
+    width: max-content;
+}
+@media (max-width:500px) {
+    .usp-columns .pagebuilder-column-line{
+        flex-direction: column;
+    }
+    .usp-column{
+        display: flex;
+        align-self: center;
+        margin: 0 auto;
+    
+    }
 }
 .page-main {
 	margin-top: 2rem;
@@ -1763,6 +1822,50 @@ body {
 .trending-carousel .glider-contain .item:hover img:hover{
                 --tw-shadow: none;
             }
+/* FOOTER */
+.below-footer{
+    display: flex;
+    justify-content: space-between;
+    padding:0 20px 60px 20px;
+    background-color: #f8f8f8;
+}
+.foot-links{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    
+}
+.foot-links svg{
+    margin: 0 15px;
+}
+.foot-text{
+    font-family: "FiraSans";
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.52857143;
+}
+@media (max-width: 500px) {
+    .below-footer{
+        display: flex;
+        flex-direction: column;
+    }
+    .foot-text{
+        font-size: 11px;
+        text-align: center;
+    }
+    .foot-links{
+        justify-content: center;
+        margin-bottom: 15px;
+    }
+    .my-news-letter h2{
+        width: 70%;
+        margin: 0 auto;
+    }
+    .my-news-letter input{
+        width: 160px;
+        margin-right: 30px;
+    }
+}
 .swatch-attribute .swatch-attribute-options {
 	display: flex;
 	flex-direction: row;
@@ -1872,6 +1975,10 @@ body {
 @font-face{
     font-family: "Oswald";
     src: url(".../fonts/Oswald-VariableFont_wght.ttf") format("truetype");
+}
+@font-face{
+    font-family: "FiraSans";
+    src: url(".../fonts/FiraSans-Bold.ttf") format("truetype");
 }
 /**
  * Hyvä Themes - https://hyva.io
@@ -2946,9 +3053,6 @@ a.pagebuilder-button-secondary:focus, button.pagebuilder-button-secondary:focus,
 .mt-\[100px\] {
 	margin-top: 100px;
 }
-.mb-\[140px\] {
-	margin-bottom: 140px;
-}
 .-mr-2 {
 	margin-right: -0.5rem;
 }
@@ -3860,6 +3964,9 @@ a.pagebuilder-button-secondary:focus, button.pagebuilder-button-secondary:focus,
 }
 .align-middle {
 	vertical-align: middle;
+}
+.font-FiraSans {
+	font-family: FiraSans, sans-serif;
 }
 .font-Oswald {
 	font-family: Oswald, sans-serif;
