@@ -40,7 +40,7 @@ $logoSrc = $logoPathResolver && method_exists($logoPathResolver, 'getLogoSrc')
        href="<?= $escaper->escapeUrl($block->getUrl('')) ?>"
        title="<?= $escaper->escapeHtmlAttr($storeName) ?>"
        aria-label="store logo">
-        <img src="<?= $escaper->escapeUrl($logoSrc) ?>"
+        <img class="big-logo" id="header-logo" src="<?= $escaper->escapeUrl($logoSrc) ?>"
              title="<?= $escaper->escapeHtmlAttr($block->getLogoAlt()) ?>"
              alt="<?= $escaper->escapeHtmlAttr($block->getLogoAlt()) ?>"
             <?= $logoWidth ?

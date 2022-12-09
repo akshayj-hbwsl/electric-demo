@@ -49,12 +49,12 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
 </script>
 
 <div id="header"
-     class="relative z-30 w-full border-b shadow bg-container-lighter border-container-lighter"
+     class="relative z-30 w-full   bg-container-lighter "
      x-data="initHeader()"
      @keydown.window.escape="searchOpen = false;"
      @private-content-loaded.window="getData(event.detail.data)"
 >
-    <div class="container flex flex-wrap items-center justify-between w-full px-6 py-3 mx-auto mt-0">
+    <div class="container flex flex-wrap items-center justify-between px-6 py-3 mx-auto mt-0 w-[1200px] header-border head-bord-class">
         <!--Logo-->
         <?= $block->getChildHtml('logo'); ?>
 
@@ -168,13 +168,26 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
 
 <script type="text/javascript">
      window.addEventListener("scroll", (event) => {
-        console.log(window.scrollY)
+        
+        // if scrolled
         if(window.scrollY>100){
             document.querySelector('#header').classList.add("fixed_header");
             document.querySelector('#header').classList.remove("relative");
+            document.querySelector('#header').style.backgroundColor = "rgba(0, 0, 0, 0.7)" ;
+            document.querySelector('#header').style.height = "62px" ;
+            document.querySelector('#header-logo').classList.add("medium-logo");
+            document.querySelector('#header-logo').classList.remove("big-logo");
+
+            document.querySelector('.head-bord-class').classList.remove("header-border");
         }else{
             document.querySelector('#header').classList.remove("fixed_header");
             document.querySelector('#header').classList.add("relative");
+            document.querySelector('#header').style.backgroundColor = "rgba(0, 0, 0, 0)";
+            document.querySelector('#header').style.height = "101px" ;
+            document.querySelector('#header-logo').classList.add("big-logo");
+            document.querySelector('#header-logo').classList.remove("medium-logo");
+
+            document.querySelector('.head-bord-class').classList.add("header-border");
         }
 });
 </script>

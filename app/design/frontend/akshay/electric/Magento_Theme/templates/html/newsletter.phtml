@@ -1,14 +1,14 @@
 <div class="my-news-letter flex-col items-center justify-center text-center mt-[100px] ">
         <img class="mx-auto" src="<?php echo $this->getViewFileUrl('images/newletter-icon.png'); ?>" alt ="plane icon" />
-        <h2 class="2xl pt-5 font-bold tracking-wide text-[23px] font-FiraSans">GET 15% OFF BY SUBSCRIBING TO OUR NEWSLETTER</h2>
+        <h2 class="2xl pt-5 font-bold tracking-[5px] text-[23px] font-Oswald">GET 15% OFF BY SUBSCRIBING TO OUR NEWSLETTER</h2>
         <div class="pt-[50px]">
             <input name="email"
                 type="email"
                 required
                 id="newsletter-subscribe"
-                class="border-0 w-80 border-b border-black border-solid text-sm pl-4 h-10 font-FiraSans"
+                class="border-0 border-b border-black border-solid text-sm h-10 font-Oswald w-[350px] news-input"
                 placeholder="<?= $escaper->escapeHtmlAttr(__('Your email address')) ?>">
-            <button class=" ml-4 bg-black text-white h-10 px-7">
+            <button class=" ml-4 bg-black text-white w-[81px] h-[40px] uppercase news-button px-7 font-Oswald">
             <?= $escaper->escapeHtml(__('Send')) ?>
             </button>
         </div>
