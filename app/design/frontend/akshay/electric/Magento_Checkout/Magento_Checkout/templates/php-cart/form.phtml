@@ -21,6 +21,10 @@ use Magento\Framework\Escaper;
 /** @var ViewModelRegistry $viewModels */
 /** @var Escaper $escaper */
 
+/** @var Hyva\Theme\ViewModel\HeroiconsOutline $heroicons */
+$heroicons = $viewModels->require(\Hyva\Theme\ViewModel\HeroiconsOutline::class);
+
+
 /** @var CartViewModel $cartViewModel */
 $cartViewModel = $viewModels->require(CartViewModel::class);
 
@@ -47,23 +51,23 @@ $cartItemOutputViewModel = $viewModels->require(ItemOutput::class);
             </div>
         <?php endif ?>
         <table id="shopping-cart-table"
-               class="cart items data table w-full table-row-items"
+               class="cart items data table w-full table-row-items border "
         >
             <caption class="table-caption sr-only">
                 <?= $escaper->escapeHtml(__('Shopping Cart Items')) ?>
             </caption>
-            <thead class="hidden lg:table-header-group">
-                <tr class="text-right">
-                    <th class="col item text-left pt-4 px-4 pb-2" scope="col">
+            <thead class="hidden lg:table-header-group border">
+                <tr class="text-right border leading-none ">
+                    <th class="col item text-center text-[14px] font-normal uppercase font-sans  border py-3" scope="col">
                         <?= $escaper->escapeHtml(__('Item')) ?>
                     </th>
-                    <th class="col price pt-4 px-4 pb-2" scope="col">
+                    <th class="col item text-center text-[14px] font-normal uppercase font-sans  border py-3" scope="col">
                         <?= $escaper->escapeHtml(__('Price')) ?>
                     </th>
-                    <th class="col qty pt-4 px-4 pb-2" scope="col">
+                    <th class="col item text-center text-[14px] font-normal uppercase font-sans  border py-3" scope="col">
                         <?= $escaper->escapeHtml(__('Qty')) ?>
                     </th>
-                    <th class="col subtotal pt-4 px-4 pb-2" scope="col">
+                    <th class="col item text-center text-[14px] font-normal uppercase font-sans  border py-3" scope="col">
                         <?= $escaper->escapeHtml(__('Subtotal')) ?>
                     </th>
                 </tr>
@@ -78,7 +82,7 @@ $cartItemOutputViewModel = $viewModels->require(ItemOutput::class);
             </div>
         <?php endif ?>
     </div>
-    <div class="cart actions flex flex-col sm:flex-row justify-end gap-4 items-center my-4">
+    <div class="cart actions flex flex-col sm:flex-row justify-end gap-4 items-center my-4 justify-between">
         <?php if ($cartViewModel->isClearShoppingCartEnabled()): ?>
         <script>
             function initClearShoppingCartModal() {
@@ -106,14 +110,20 @@ $cartItemOutputViewModel = $viewModels->require(ItemOutput::class);
             </div>
 
         <?php endif ?>
+        <button name="continue_shopping"
+                data-cart-item-update=""
+                value="continue_shopping"
+                title="<?= $escaper->escapeHtmlAttr(__('Continue Shopping')) ?>"
+                class="action update tracking-[0.5px]  btn rounded-none bg-[#5d5d5d] uppercase font-sans font-bold w-[206px] text-4 before:content-['&#8635'] text-[14px]  flex justify-end h-[33px]"><a href="<?= $escaper->escapeUrl($block->getBaseUrl()) ?>">Continue Shopping</a></button>
         <button type="submit"
                 name="update_cart_action"
                 data-cart-item-update=""
                 value="update_qty"
                 title="<?= $escaper->escapeHtmlAttr(__('Update Shopping Cart')) ?>"
-                class="action update btn btn-secondary"
+                class="action update  btn rounded-none h-[33px] bg-[#5d5d5d] uppercase font-sans font-bold w-[247px] text-4 before:content-['&#8635'] text-[14px] tracking-[1px] flex justify-end"
         >
             <?= $escaper->escapeHtml(__('Update Shopping Cart')) ?>
+
         </button>
     </div>
 </form>

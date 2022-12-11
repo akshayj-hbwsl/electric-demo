@@ -59,9 +59,6 @@
         </referenceContainer>
         <referenceBlock name="page.main.title" remove="true"/>
 
-        <referenceContainer name="main.content">
-          <block class="Magento\Framework\View\Element\Template" name="newsletter" after="-" template="Magento_Theme::html/newsletter.phtml" />
-        </referenceContainer>
 
 
     </body>

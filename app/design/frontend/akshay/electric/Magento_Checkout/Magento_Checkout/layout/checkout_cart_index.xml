@@ -37,7 +37,7 @@
                                        name="checkout.cart.shipping"
                                        as="shipping"
                                        template="Magento_Checkout::php-cart/shipping.phtml"
-                                       after="checkout.cart.summary.title"
+                                       before="-"
                                 />
 
                                 <container name="checkout.cart.totals.container" as="totals" label="Shopping Cart Totals">
@@ -51,6 +51,9 @@
                                         <block name="shipping" template="Magento_Checkout::php-cart/totals/shipping.phtml"/>
                                         <block name="subtotal" template="Magento_Checkout::php-cart/totals/subtotal.phtml"/>
                                     </block>
+                                    <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-">
+                                <block class="Magento\Checkout\Block\Cart\Coupon" name="checkout.cart.coupon" as="coupon" template="Magento_Checkout::php-cart/coupon.phtml"/>
+                            </container>
                                 </container>
 
                                 <block class="Magento\Checkout\Block\Cart" name="checkout.cart.methods.bottom" template="Magento_Checkout::php-cart/methods.phtml">
@@ -71,9 +74,9 @@
 
                             <container name="checkout.cart.widget" as="checkout_cart_widget" label="Shopping Cart Items After" after="cart-items"/>
 
-                            <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-">
+                            <!-- <container name="cart.discount" label="Cart Discount Container" htmlTag="div" htmlClass="cart-discount" after="-">
                                 <block class="Magento\Checkout\Block\Cart\Coupon" name="checkout.cart.coupon" as="coupon" template="Magento_Checkout::php-cart/coupon.phtml"/>
-                            </container>
+                            </container> -->
                         </block>
                     </container>
 
@@ -95,6 +98,7 @@
                     <argument name="hide_rating_summary" xsi:type="boolean">true</argument>
                 </arguments>
             </block>
+            <!-- <referenceBlock name="checkout.cart.shipping" remove="true"></referenceBlock> -->
 
 
         </referenceContainer>

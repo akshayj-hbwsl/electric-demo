@@ -334,14 +334,14 @@ use Magento\Framework\View\Helper\SecureHtmlRenderer;
     }
 </script>
 <div id="block-shipping"
-     class="flex flex-col pb-2 my-2 border-b-2 border-gray-300 estimate-shipping-form"
+     class="flex flex-col pb-2 my-2 border-b border-gray-300 estimate-shipping-form items-center"
      x-data="initShippingEstimation()"
      x-init="init($dispatch)"
      @private-content-loaded.window="receiveCustomerData($event.detail.data)"
 >
     <div class="title" data-role="title">
         <span @click="toggleEstimateShipping"
-              class="flex justify-between w-full font-semibold whitespace-nowrap cursor-pointer select-none text-primary-lighter"
+              class="flex justify-between w-fit uppercase tracking-[1px] whitespace-nowrap cursor-pointer select-none text-primary-lighter text-[16px]"
               id="shipping-estimate-toggle"
               role="heading" aria-level="2"
         >
@@ -349,11 +349,11 @@ use Magento\Framework\View\Helper\SecureHtmlRenderer;
                 ? $escaper->escapeHtml(__('Estimate Tax'))
                 : $escaper->escapeHtml(__('Estimate Shipping and Tax'))
             ?>
-            <span :class="{ 'rotate-180' : showEstimateShipping}" class="block transform rotate-180">
+            <!-- <span :class="{ 'rotate-180' : showEstimateShipping}" class="block transform rotate-180">
                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6" width="25" height="25">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
                 </svg>
-            </span>
+            </span> -->
         </span>
     </div>
     <div id="block-summary"
@@ -467,7 +467,7 @@ use Magento\Framework\View\Helper\SecureHtmlRenderer;
                                         <div class="grid grid-cols-2 w-full">
                                             <div x-text="rate.method_title"></div>
                                             <div x-text="hyva.formatPrice(rate.price_excl_tax)"></div>
-                                        </div>
+                                        </div>  
                                     </label>
                                 </template>
                             </div>

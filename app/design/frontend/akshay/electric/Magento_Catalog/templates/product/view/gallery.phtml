@@ -50,9 +50,9 @@ $productName = $block->getProduct()->getName();
      x-data="initGallery()"
      x-init="initActive(); $nextTick(() => calcPageSize())"
      x-spread="eventListeners"
-     class="order-1 w-full md:w-5/12 lg:w-1/2 md:h-auto"
+     class="order-1 lg:w-[460px] md:w-5/12  md:h-auto"
     >
-    <div :class="{'w-full h-full fixed block top-0 left-0 bg-white z-50 flex': fullscreen}">
+    <div :class="{'w-fit h-full fixed block top-0 left-0 bg-white z-50 flex': fullscreen}">
         <div class="absolute top-0 right-0 pt-4 pr-4">
             <button @click="fullscreen = false; $nextTick(() => calcPageSize())"
                     type="button"
@@ -69,7 +69,7 @@ $productName = $block->getProduct()->getName();
              x-transition:enter-start="opacity-0"
              x-transition:enter-end="opacity-100"
         >
-            <div class="relative mb-6">
+            <div class="relative mb-6 w-fit">
                 <?php
                 /**
                  * The first image is a placeholder that determines the
@@ -82,7 +82,7 @@ $productName = $block->getProduct()->getName();
                 <img
                     alt="main product photo"
                     title="<?= $escaper->escapeHtmlAttr($productName) ?>"
-                    class="object-contain object-center w-full h-auto max-h-screen-75"
+                    class="object-contain object-center w-fit h-auto max-h-screen-75"
                     :class="'opacity-0'"
                     src="<?= /* @noEscape */ $mainImageData ?>"
                     width="<?= /* @noEscape */ $mediumWidth ?>"
@@ -95,7 +95,7 @@ $productName = $block->getProduct()->getName();
                         :alt="image.caption || '<?= $escaper->escapeJs($productName) ?>'"
                         :title="image.caption || '<?= $escaper->escapeJs($productName) ?>'"
                         @click="fullscreen = true; $nextTick(() => calcPageSize())"
-                        class="absolute inset-0 object-contain object-center w-full m-auto max-h-screen-75"
+                        class="absolute inset-0 object-contain object-center w-fit m-0 max-h-screen-75"
                         :class="{ 'cursor-pointer': !fullscreen }"
                         width="<?= /* @noEscape */ $mediumWidth ?>"
                         height="<?= /* @noEscape */ $mediumHeight ?>"
@@ -125,7 +125,7 @@ $productName = $block->getProduct()->getName();
         <div @resize.window.debounce="calcPageSize(); $nextTick(() => calcActive())">
             <div
                 id="thumbs"
-                class="flex items-center"
+                class="flex items-center hidden"
                 :class="{ 'fixed justify-center bottom-0 left-0 right-0 mx-6': fullscreen }"
                 style="min-height: 100px;"
             >
@@ -136,7 +136,7 @@ $productName = $block->getProduct()->getName();
                     :class="{ 'opacity-25 pointer-events-none' : activeSlide === 0, 'hidden' : !isSlider }"
                     @click="scrollPrevious"
                 ><?= $heroicons->chevronLeftHtml() ?></button>
-                <div class="js_thumbs_slides thumbs-wrapper relative flex flex-nowrap w-full overflow-auto transition-all js_slides snap md:px-1 xl:px-2"
+                <div class="js_thumbs_slides thumbs-wrapper relative flex flex-nowrap w-full overflow-auto transition-all js_slides snap md:px-1 xl:px-2 hidden"
                      x-ref="jsThumbSlides"
                      @scroll.debounce="calcPageSize(); calcActive()"
                 >

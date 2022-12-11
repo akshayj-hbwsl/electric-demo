@@ -23,10 +23,10 @@ $heroicons = $viewModels->require(HeroiconsSolid::class);
 ?>
 <a href="#"
    title="<?= $escaper->escapeHtml(__('Remove item')) ?>"
-   class="action action-delete"
+   class="action action-delete flex justify-center w-[151px] bg-[#5d5d5d]"
    x-data="{}"
    @click.prevent='hyva.postForm(<?= /* @noEscape */ $block->getDeletePostJson() ?>)'
 >
-    <?= $heroicons->trashHtml('w-6 h-6') ?>
+    <button class="btn text-[13px] rounded-none  w-[auto] bg-[#5d5d5d] font-sans uppercase font-bold py-[5px] w-auto pl-[34px] ">Remove item</button>
     <span class="sr-only"><?= $escaper->escapeHtml(__('Remove item')) ?></span>
 </a>

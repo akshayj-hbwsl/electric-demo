@@ -14,7 +14,7 @@ use Magento\Framework\Escaper;
 /** @var $block Image */
 /** @var $escaper Escaper */
 ?>
-<img class=" object-contain prod-image <?= $escaper->escapeHtmlAttr($block->getClass()) ?>"
+<img class="hover:shadow-sm object-contain <?= $escaper->escapeHtmlAttr($block->getClass()) ?>"
      x-data=""
      @update-gallery-<?= (int)$block->getProductId() ?>.window="$el.src = $event.detail"
     <?php foreach ($block->getCustomAttributes() as $name => $value): ?>

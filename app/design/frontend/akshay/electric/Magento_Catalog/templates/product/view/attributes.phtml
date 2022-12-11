@@ -31,10 +31,10 @@ $product = $block->getProduct();
     <div class="table-wrapper max-w-prose overflow-x-auto" id="product-attributes">
         <table class="additional-attributes w-full">
             <?php foreach ($attributes as $attribute): ?>
-                <tr class="border-b border-gray-300 last:border-b-0">
-                    <th class="col label w-1/2 py-2 text-left text-gray-700 font-normal product-attribute-label"
+                <tr class="">
+                    <th class="col label w-1/2 py-2 text-left text-[#555] text-[13px] font-bold font-sans tracking-[1px] pt-[5.5px] pr-[30px] pb-[10px] product-attribute-label"
                         scope="row"><?= $escaper->escapeHtml($attribute['label']) ?></th>
-                    <td class="col data w-1/2 py-2 pl-2 text-left text-gray-900 product-attribute-value"
+                    <td class="col data w-1/2 py-2 pl-2 text-left text-gray-900 product-attribute-value font-arial pt-[5.5px] pb-[10px] px-[5px] align-top text-[14px]"
                         data-th="<?= $escaper->escapeHtmlAttr($attribute['label']) ?>"
                     ><?= /* @noEscape */
                      $catalogOutputHelper->productAttribute($product, $attribute['value'], $attribute['code']) ?></td>

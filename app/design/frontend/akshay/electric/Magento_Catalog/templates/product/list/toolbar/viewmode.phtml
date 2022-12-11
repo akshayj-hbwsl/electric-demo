@@ -18,19 +18,19 @@ use Magento\Framework\Escaper;
 
     <?php $modes = $block->getModes(); ?>
     <?php if ($modes && count($modes) > 1): ?>
-        <div class="modes flex space-x-1 mr-2 items-center px-2 py-2 rounded-md border
-    border-gray-300 bg-white text-sm leading-5 w-20 order-1 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2">
+        <div class="modes flex space-x-1  items-center px-2 py-2  
+   s bg-white text-sm leading-5 w-20 order-1 col-span-1 sm:col-span-2 md:col-span-1 lg:col-span-2 mr-6">
             <strong class="modes-label sr-only"><?= $escaper->escapeHtml((string)__('View as')) ?></strong>
             <?php foreach ($block->getModes() as $code => $label): ?>
                 <?php if ($block->isModeActive($code)): ?>
                     <strong title="<?= $escaper->escapeHtmlAttr($label) ?>"
-                            class="modes-mode active mode-<?= $escaper->escapeHtmlAttr(strtolower($code)) ?>"
+                            class="modes-mode active mode-<?= $escaper->escapeHtmlAttr(strtolower($code)) ?> border  p-4"
                             data-value="<?= $escaper->escapeHtmlAttr(strtolower($code)) ?>">
                         <span><?= $escaper->escapeHtml($label) ?></span>
                     </strong>
                 <?php else: ?>
                     <a class="modes-mode mode-<?= $escaper->escapeHtmlAttr(strtolower($code)) ?>
-                        opacity-25 hover:opacity-100"
+                        opacity-25 hover:opacity-100 border  p-4 bg-gray-500"
                        title="<?= $escaper->escapeHtmlAttr($label) ?>"
                        href="#"
                        @click.prevent="changeUrl(

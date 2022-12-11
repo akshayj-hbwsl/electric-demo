@@ -10,7 +10,7 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
     <body>
-        <referenceBlock name="product.detail.page">
+        <referenceBlock name="page.wrapper">
             <block class="Magento\Review\Block\Product\View" name="review_list"
                    template="Magento_Review::product/view/list.phtml"
                    ifconfig="catalog/review/active">

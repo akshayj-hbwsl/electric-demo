@@ -21,11 +21,11 @@ use Magento\Framework\Escaper;
 $heroicons = $viewModels->require(HeroiconsSolid::class);
 ?>
 <?php if ($block->isProductVisibleInSiteVisibility()): ?>
-    <a class="action action-edit"
+    <a class="action action-delete flex justify-center w-[84px] bg-[#5d5d5d]"
        href="<?= $escaper->escapeUrl($block->getConfigureUrl()) ?>"
        title="<?= $escaper->escapeHtmlAttr(__('Edit item parameters')) ?>"
     >
-        <?= $heroicons->pencilHtml('h-6 w-6') ?>
+    <button class="btn text-[13px] rounded-none  w-[auto] bg-[#5d5d5d] font-sans uppercase font-bold py-[5px] w-auto pl-[34px] ">Edit</button>
         <span class="sr-only"><?= $escaper->escapeHtml(__('Edit')) ?></span>
     </a>
 <?php endif ?>

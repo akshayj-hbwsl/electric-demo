@@ -64,7 +64,7 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
         <div class="flex items-center order-3">
             <!--Compare Icon-->
             <a id="compare-link"
-               class="relative invisible inline-block mx-1 no-underline sm:ml-3 hover:text-black"
+               class="relative invisible inline-block mx-1 no-underline sm:ml-3 text-white"
                :class="{ 'invisible': !(itemCount > 0) }"
                href="<?= $escaper->escapeUrl($block->getUrl('catalog/product_compare/index')) ?>"
                title="<?= $escaper->escapeHtml(__('Compare Products')) ?>"
@@ -72,7 +72,7 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
                @private-content-loaded.window="receiveCompareData($event.detail.data)"
             >
                 <?= $heroicons->scaleHtml(
-                    "w-8 h-8 md:h-6 md:w-6 hover:text-black",
+                    "w-8 h-8 md:h-6 md:w-6 hover:text-black ml-[10px]",
                     25,
                     25
                 ) ?>
@@ -97,7 +97,7 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
 
             <!--Search Icon-->
             <button id="menu-search-icon"
-                    class="inline-block ml-1 no-underline sm:ml-3 hover:text-black"
+                    class="inline-block ml-1 no-underline sm:ml-3 text-white"
                     @click.prevent="
                         searchOpen = !searchOpen;
                         $nextTick(() => {
@@ -111,11 +111,12 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
                     <?= $escaper->escapeHtml(__('Search')) ?>
                 </span>
 
-                <?= $heroicons->searchHtml(
-                    "w-8 h-8 md:h-6 md:w-6 hover:text-black",
+                 <?= $heroicons->searchHtml(
+                    "w-8 h-8 md:h-6 md:w-6 text-white",
                     25,
                     25
                 ) ?>
+                <!-- <i class="fa-solid fa-magnifying-glass search-icon"></i> -->
             </button>
 
             <!--Customer Icon & Dropdown-->
@@ -124,7 +125,7 @@ $showMiniCart = $storeConfig->getStoreConfig(\Magento\Checkout\Block\Cart\Sideba
             <!--Cart Icon-->
             <a id="menu-cart-icon"
                <?php if ($showMiniCart): ?>@click.prevent.stop="$dispatch('toggle-cart',{});"<?php endif ?>
-               class="relative inline-block ml-1 no-underline sm:ml-3 hover:text-black"
+               class="relative inline-block ml-1 no-underline sm:ml-3 text-white"
                href="<?= $escaper->escapeUrl($block->getUrl('checkout/cart/index')) ?>"
             >
                 <span class="sr-only label">
