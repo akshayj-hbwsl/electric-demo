@@ -1897,16 +1897,20 @@ body.category-products .pd0{
     margin-right: -205px;
 }
 .ripped-banner p {
-    /* padding-top: 81px; */
-    font-family: "FiraSans";
+    font-family: "Oswald", sans-serif;
     font-weight: 600;
 }
-@media (max-width:500px) {
-    #html-body .ripped-banner{
-        display: none;
+@media (max-width:986px) {
+    .ripped-banner{
+        max-height: 210px;
     }
-    .ripped-banner p {
-        display: none;
+    .ripped-banner p{
+        line-height: 34px;
+    }
+}
+@media (max-width:500px) {
+    .ripped-banner{
+        display: none !important;
     }
 }
 /* NEW ARRIVALS */
@@ -1934,6 +1938,7 @@ body.category-products .pd0{
 }
 .usp-columns .pagebuilder-column-line{
     max-width: 1200px;
+
 }
 .usp-column{
     text-align: center;
@@ -1941,9 +1946,7 @@ body.category-products .pd0{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: -webkit-max-content;
-    width: -moz-max-content;
-    width: max-content;
+    width: 100%;
 }
 .usp-shipping-img{
     width: 71px;
@@ -1958,15 +1961,30 @@ body.category-products .pd0{
     width: 46px;
     margin-bottom: 8px;
 }
+@media (max-width:760px){
+    .usp-columns .pagebuilder-column-line{
+        display: grid !important;
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .usp-columns .pagebuilder-column-line{
+        width: 100%;
+    }
+    .usp-column{
+        width: 100% !important;    
+        align-self: center;
+    }
+}
 @media (max-width:500px) {
     .usp-columns .pagebuilder-column-line{
+        display: flex !important;
         flex-direction: column;
+        gap: 40px;
     }
     .usp-column{
         display: flex;
         align-self: center;
         margin: 0 auto;
-    
+        width: 100%
     }
 }
 .page-main {
